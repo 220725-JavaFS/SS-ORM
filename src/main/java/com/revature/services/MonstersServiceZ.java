@@ -5,12 +5,24 @@ import java.util.List;
 import com.revature.daos.MonsterDAOZ;
 import com.revature.daos.MonstersDAOImplZ;
 import com.revature.models.MonsterZ;
+import com.revature.repos.MonsterZRepo;
 
 
 public class MonstersServiceZ {
 	
-private MonsterDAOZ monstersDAO = new MonstersDAOImplZ();
+	private MonsterDAOZ monstersDAO = new MonstersDAOImplZ();
 	
+	private MonsterZRepo monsterRepo;
+
+	public MonstersServiceZ(MonsterZRepo monsterRepo) {
+		super();
+		this.monsterRepo = monsterRepo;
+	}
+	
+	public MonstersServiceZ() {
+		this.monsterRepo = new MonsterZRepo();
+	}
+
 	public MonsterZ getSingleMonsters (int id){
 		return monstersDAO.getMonstersById(id);
 	}
@@ -35,6 +47,11 @@ private MonsterDAOZ monstersDAO = new MonstersDAOImplZ();
 	
 	public void updateMonster (MonsterZ monsters, int id) {
 		monstersDAO.getMonstersUpdate(monsters, id);
+	}
+
+	public MonsterZ getMonsterByName(String name) {
+		MonsterZ m = monsterRepo.getMonsterByNameFromDB(name);
+		return null;
 	}
 
 

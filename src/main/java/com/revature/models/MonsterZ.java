@@ -1,6 +1,6 @@
 package com.revature.models;
 
-public class MonsterZ {
+public class MonsterZ implements Comparable<MonsterZ>{
 	
 	private int monsters_id;
 	private String name;
@@ -140,10 +140,25 @@ public class MonsterZ {
 				+ ", attack=" + attack + ", defense=" + defense + ", description=" + description + "]";
 	}
 
+	
+
+	@Override
+	public int compareTo(MonsterZ m) {
+		int i = this.attributeType.compareTo(m.attributeType);
+		if(i!=0) {
+			return i;
+		}
+		i= this.name.compareTo(m.name);
+		if(i!=0) {
+			return i;
+		}
+		i=this.description.compareTo(m.description);
+		if(i!=0) {
+			return i;
+		}
+		return 0;
+	}
 
 
-	
-	
-	
 
 }
