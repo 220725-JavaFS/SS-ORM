@@ -19,9 +19,6 @@ public class MonstersServiceZ {
 		this.monsterRepo = monsterRepo;
 	}
 	
-	public MonstersServiceZ() {
-		this.monsterRepo = new MonsterZRepo();
-	}
 
 	public MonsterZ getSingleMonsters (int id){
 		

@@ -22,7 +22,7 @@ public class MonsterServiceTestZ {
 	private MonsterZRepo mockRepo = Mockito.mock(MonsterZRepo.class);
 	private MonstersServiceZ monsterService = new MonstersServiceZ(mockRepo);
 	private MonsterZ testMonster = new MonsterZ(23,"Silver Surfer", "Holy", 1200, 3000, "Holy of Surfers.");
-	private MonsterZ testMonster2 = new MonsterZ(25,"Dark Wizard", "Warlock", 2500, 2500, "Magician of the Evil Arts.");
+	private MonsterZ testMonster2 = new MonsterZ(30,"Dark Wizard", "Warlock", 2500, 2500, "Magician of the Evil Arts.");
 	private MonsterZ testMonster3 = new MonsterZ(16,"Silver", "Holy", 1200, 300, "Holy of Surfers.");
 	private MonsterZ testMonster4 = new MonsterZ(26,"Dark Wizard", "Warlock", 2500, 2500, "Magician of the Evil Arts.");
 
@@ -53,9 +53,9 @@ public class MonsterServiceTestZ {
 	
 	@Test
 	public void testFindById() {
-		Mockito.when(mockRepo.getMonstersById(25))
+		Mockito.when(mockRepo.getMonstersById(30))
 		.thenReturn(new MonsterZ("Dark Wizard", "Warlock", 2500, 2500, "Magician of the Evil Arts."));
-	MonsterZ m = monsterService.getSingleMonsters(25);
+	MonsterZ m = monsterService.getSingleMonsters(30);
 	assertEquals(testMonster2, m);
 	
 	System.out.println("find 1 success");
