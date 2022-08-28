@@ -24,6 +24,7 @@ public class MonstersServiceZ {
 	}
 
 	public MonsterZ getSingleMonsters (int id){
+		
 		return monstersDAO.getMonstersById(id);
 	}
 	
@@ -36,23 +37,14 @@ public class MonstersServiceZ {
 	}
 	
 	public MonsterZ deleteMonster(int id) {
-		return monstersDAO.eraseMonsters(id);
-		
-	}
-	
-	public void deleteNameMonster(MonsterZ name) {
-		monstersDAO.eraseMonstersByName(name);
-		
+		return monstersDAO.eraseMonsters(id);	
 	}
 	
 	public void updateMonster (MonsterZ monsters, int id) {
 		monstersDAO.getMonstersUpdate(monsters, id);
 	}
 
-	public MonsterZ getMonsterByName(String name) {
-		MonsterZ m = monsterRepo.getMonsterByNameFromDB(name);
-		return null;
-	}
+
 
 
 }

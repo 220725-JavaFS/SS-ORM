@@ -17,11 +17,11 @@ public interface MonsterDAOZ {
 
 	public abstract MonsterZ eraseMonsters(int id);
 
-	public abstract void eraseMonstersByName(MonsterZ name);
+	//public abstract void eraseMonstersByName(MonsterZ name);
 
 	public abstract MonsterZ getMonstersUpdate(MonsterZ monsters, int id);
 
 	
-	Object getMonstersById(Object object, int id) throws ServletException, IOException;
+	//Object getMonstersById(Object object, int id) throws ServletException, IOException;
 
 }

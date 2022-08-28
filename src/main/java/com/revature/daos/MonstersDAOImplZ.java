@@ -26,47 +26,47 @@ public class MonstersDAOImplZ implements MonsterDAOZ{
 	
 static ObjectMapper mapper = new ObjectMapper();
 	
-	@Override
-	public Object getMonstersById(Object object, int id) throws IOException {
-		try(Connection conn = ConnectionUtil.getConnection()){
-			//Monsters m = Monsters.FindById(id);
-			Class<MonsterZ> c2 = MonsterZ.class;
-			MonsterZ monster = new MonsterZ();
-			
-			MapperZ map = new JSONMapperZ();
-			JsonNode aObj = mapper.readTree((JsonParser) object);
-			String jsonNode1 = aObj.get("monstersID").asText();
-			
-			String columnID = jsonNode1;
-			String sql = "SELECT * FROM "+object+" WHERE "+columnID+" = " + id +"; ";
-			Statement statement = conn.createStatement(); 
-			ResultSet result = statement.executeQuery(sql);
-			//ResultSetMetaData resmd = result.getMetaData();
-			//List<Monsters> list = new ArrayList();
-			
-//			if(result.next()) {
-//				//results sets are cursor base, each time .next is called the cursor moves to the next group of values. 
-//				//It starts the one before so you will always need to call the next.
-//				
-//				Monsters monsters = new Monsters(
-//						result.getInt("monsterID"),
-//						result.getString("monsterName"),
-//						result.getString("attributeType"),
-//						result.getInt("attack"),
-//						result.getInt("defense"),
-//						result.getString("description")
-//						);
-//				
-//				return monsters;
-//				
-//			}
-			
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}
-		
-		return null;
-	}
+//	@Override
+//	public Object getMonstersById(Object object, int id) throws IOException {
+//		try(Connection conn = ConnectionUtil.getConnection()){
+//			//Monsters m = Monsters.FindById(id);
+//			Class<MonsterZ> c2 = MonsterZ.class;
+//			MonsterZ monster = new MonsterZ();
+//			
+//			MapperZ map = new JSONMapperZ();
+//			JsonNode aObj = mapper.readTree((JsonParser) object);
+//			String jsonNode1 = aObj.get("monstersID").asText();
+//			
+//			String columnID = jsonNode1;
+//			String sql = "SELECT * FROM "+object+" WHERE "+columnID+" = " + id +"; ";
+//			Statement statement = conn.createStatement(); 
+//			ResultSet result = statement.executeQuery(sql);
+//			//ResultSetMetaData resmd = result.getMetaData();
+//			//List<Monsters> list = new ArrayList();
+//			
+////			if(result.next()) {
+////				//results sets are cursor base, each time .next is called the cursor moves to the next group of values. 
+////				//It starts the one before so you will always need to call the next.
+////				
+////				Monsters monsters = new Monsters(
+////						result.getInt("monsterID"),
+////						result.getString("monsterName"),
+////						result.getString("attributeType"),
+////						result.getInt("attack"),
+////						result.getInt("defense"),
+////						result.getString("description")
+////						);
+////				
+////				return monsters;
+////				
+////			}
+//			
+//		}catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		return null;
+//	}
 	
 	
 	
@@ -207,20 +207,20 @@ static ObjectMapper mapper = new ObjectMapper();
 		
 	}
 
-	@Override
-	public void eraseMonstersByName(MonsterZ name) {
-		try(Connection conn = ConnectionUtil.getConnection()){
-			String sql = "DELETE FROM Monsters WHERE monsterName = '"+name+"';"; 
-			PreparedStatement prepares = conn.prepareStatement(sql);
-		
-			prepares.execute();
-		
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
-		
-	}
+//	@Override
+//	public void eraseMonstersByName(MonsterZ name) {
+//		try(Connection conn = ConnectionUtil.getConnection()){
+//			String sql = "DELETE FROM Monsters WHERE monsterName = '"+name+"';"; 
+//			PreparedStatement prepares = conn.prepareStatement(sql);
+//		
+//			prepares.execute();
+//		
+//		} catch (SQLException e) {
+//			
+//			e.printStackTrace();
+//		}
+//		
+//	}
 
 	@Override
 	public MonsterZ getMonstersUpdate(MonsterZ monsters, int id) {
